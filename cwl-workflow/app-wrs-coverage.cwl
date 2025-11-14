@@ -34,7 +34,7 @@ s:softwareRequirements:
 
 # Current version of the software
 
-s:softwareVersion: 0.1.0
+s:softwareVersion: 0.1.1
 s:softwareHelp:
   '@type': s:CreativeWork
   s:name: User Manual

@@ -2,7 +2,6 @@
 $namespaces:
   s: https://schema.org/
   calrissian: https://calrissian-cwl.github.io/schema#
-s:softwareVersion: 1.4.1
 schemas:
   - http://schema.org/version/9.0/schemaorg-current-http.rdf
 
@@ -65,8 +64,6 @@ s:author:
     s:familyName: Brito
     s:givenName: Fabrice
     s:identifier: https://orcid.org/0009-0000-1342-9736
-s://orcid.org/0009-0006-2063-618X
-
 
 cwlVersion: v1.2
   

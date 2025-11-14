@@ -122,7 +122,7 @@ $graph:
         workerCores: 1
         workerCoresLimit: 1
         workerMemory: "1G"
-        clusterMaxCore: 10
+        clusterMaxCores: 10
         clusterMaxMemory: "20G"
     baseCommand: ["wrs-coverage"]
     arguments: []

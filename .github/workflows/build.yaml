@@ -153,8 +153,8 @@ jobs:
         --attach=./downloads/${{matrix.step}}-datacite-${{needs.version.outputs.app-version}}.json \
         --attach=./downloads/${{matrix.step}}-ogcapi_record-${{needs.version.outputs.app-version}}.json \
         --attach=./downloads/${{matrix.step}}-state-${{needs.version.outputs.app-version}}.png \
-        --attach=./downloads/${{matrix.step}}-sequence-${{needs.version.outputs.app-version}}.png \
-        --attach=./downloads/${{matrix.step}}-class-${{needs.version.outputs.app-version}}.png \
+        # --attach=./downloads/${{matrix.step}}-sequence-${{needs.version.outputs.app-version}}.png \
+        # --attach=./downloads/${{matrix.step}}-class-${{needs.version.outputs.app-version}}.png \
         --attach=./downloads/${{matrix.step}}-component-${{needs.version.outputs.app-version}}.png \
         --attach=./downloads/${{matrix.step}}-activity-${{needs.version.outputs.app-version}}.png \
         ./downloads/${{matrix.step}}-${{needs.version.outputs.app-version}}.cwl

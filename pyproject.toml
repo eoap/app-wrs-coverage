@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wrs-coverage"
+dynamic = ["version"]
+description = 'Landsat WRS Coverage - dask demo'
+requires-python = ">=3.8"
+license = "MIT"
+keywords = ["Dask", "Calrissian"]
+
+authors = [
+  { name = "Leonardo Mizzoni", email = "leonardo.mizzoni@terradue.com" },
+  { name = "Fabrice Brito", email = "fabrice.brito@terradue.com" }
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "dask-geopandas==0.5.0",
+  "click==8.3.0",
+  "dask-gateway==2025.4.0",
+  "dask[distributed]==2025.4.0",
+  "matplotlib==3.10.7",
+  "loguru==0.7.3",
+  "planetary-computer==1.0.0",
+  "pystac-client==0.9.0",
+  "adlfs==2025.8.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.version]
+path = "src/wrs_coverage/__about__.py"
+
+source_pkgs = ["src/wrs_coverage"]
+
+[project.scripts]
+wrs-coverage = "wrs_coverage.app:start"
+
+[tool.hatch.envs.dev]
+python = "3.12"
+
+[tool.hatch.envs.prod]
+python = "3.12"
+path = "/app/envs/wrs-coverage"
+

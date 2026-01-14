@@ -34,7 +34,7 @@ s:softwareRequirements:
 
 # Current version of the software
 
-s:softwareVersion: 0.1.1
+s:softwareVersion: 0.1.2
 s:softwareHelp:
   '@type': s:CreativeWork
   s:name: User Manual
@@ -115,15 +115,17 @@ $graph:
         envDef: {}
       NetworkAccess:
         networkAccess: true
-    hints:
+      ResourceRequirement:
+        coresMax: 1
+        ramMax: 4196
       DockerRequirement:
-        dockerPull: docker.io/library/wrs-coverage
+        dockerPull: ghcr.io/eoap/app-wrs-coverage:0.1.1
       calrissian:DaskGatewayRequirement:
         workerCores: 1
         workerCoresLimit: 1
-        workerMemory: "1G"
-        clusterMaxCores: 10
-        clusterMaxMemory: "20G"
+        workerMemory: "2G"
+        clusterMaxCores: 4
+        clusterMaxMemory: "10G"
     baseCommand: ["wrs-coverage"]
     arguments: []
     inputs:

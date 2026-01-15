@@ -1,0 +1,49 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wrs-coverage
+spec:
+  ttlSecondsAfterFinished: 5
+  template:
+    spec:
+      serviceAccountName: calrissian-sa
+      containers:
+        - name: calrissian
+          image: calrissian:0.19.0-fix
+          command: ["calrissian"]
+          args:
+            - --debug
+            - --no-match-user
+            - --stdout 
+            - /calrissian/results.json
+            - --stderr 
+            - /calrissian/app.log
+            - --max-ram 
+            - 16G
+            - --max-cores 
+            - "8"
+            - --tmp-outdir-prefix 
+            - /calrissian/tmp/ 
+            - --outdir
+            - /calrissian/results
+            - --usage-report 
+            - /calrissian/usage.json
+            - --tool-logs-basepath 
+            - /calrissian/logs
+            - --dask-gateway-url
+            - "http://traefik-dask-gateway.eoap-dask-gateway.svc.cluster.local:80"
+            - /calrissian/app-wrs-coverage.cwl#wrs-coverage
+          volumeMounts:
+            - name: calrissian-volume
+              mountPath: /calrissian
+          env:
+            - name: CALRISSIAN_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+      restartPolicy: Never
+      volumes:
+        - name: calrissian-volume
+          persistentVolumeClaim:
+            claimName: calrissian-claim    
+  backoffLimit: 3

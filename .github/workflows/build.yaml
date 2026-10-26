@@ -19,7 +19,7 @@ jobs:
         step: [app-wrs-coverage]
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v7
       with:
         python-version: 3.x
     - run: pip install cwltool
@@ -35,7 +35,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v7
       with:
         python-version: 3.x
     - run: pip install "transpiler-mate>=0.17.0"
@@ -52,7 +52,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/setup-python@v7
       with:
         python-version: 3.12
     - run: |

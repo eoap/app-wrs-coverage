@@ -18,7 +18,7 @@ jobs:
       matrix:
         step: [app-wrs-coverage]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
     - uses: actions/setup-python@v2
       with:
         python-version: 3.x
@@ -34,7 +34,7 @@ jobs:
       app-version: ${{ steps.set-version.outputs.version }}
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
     - uses: actions/setup-python@v2
       with:
         python-version: 3.x
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
     - uses: actions/setup-python@v2
       with:
         python-version: 3.12
@@ -75,7 +75,7 @@ jobs:
         step: ['app-wrs-coverage']
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
     - run: echo version ${{needs.version.outputs.app-version}}
     - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     - name: build & push image
@@ -124,7 +124,7 @@ jobs:
         step: [app-wrs-coverage]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
     - run: |
         set -x
         tag="ghcr.io/eoap/${{matrix.step}}:${{needs.version.outputs.app-version}}"

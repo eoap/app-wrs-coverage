@@ -270,7 +270,7 @@ jobs:
         asset_content_type: text/json
 
     - name: Setup ORAS CLI
-      uses: oras-project/setup-oras@v1
+      uses: oras-project/setup-oras@v2
     
     - name: Push CWL as OCI Artifact to GHCR
       run: |

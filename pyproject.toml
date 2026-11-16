@@ -32,7 +32,7 @@ dependencies = [
   "dask-gateway==2025.4.0",
   "dask[distributed]==2025.4.0",
   "matplotlib==3.10.7",
-  "loguru==0.7.3",
+  "loguru==0.8.0",
   "planetary-computer==1.0.0",
   "pystac-client==0.9.0",
   "adlfs==2025.8.0",
